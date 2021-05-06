@@ -1,0 +1,4 @@
+export const LOAD_QUESTIONS_SUCCESS = "LOAD_QUESTIONS_SUCCESS";
+export const LOAD_ALL_USERS = "LOAD_ALL_USERS";
+export const SET_FORM_VALUE = "SET_FORM_VALUE";
+export const SET_ACTIVE = "SET_ACTIVE";

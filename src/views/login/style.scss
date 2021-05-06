@@ -1,0 +1,86 @@
+$primary: #ff6701;
+$secondary: #fea82f;
+
+#login {
+  .content {
+    background-size: 20px 20px;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    padding-top: 70px !important;
+    margin: 0 !important;
+    form {
+      background-color: white !important;
+      padding: 10px 20px 20px 20px;
+      .form-group {
+        position: relative;
+        margin: 30px 0 0 0;
+        .form-label {
+          color: $secondary;
+          font-size: 12px;
+          position: absolute;
+          top: -9px;
+          left: 15px;
+          background-color: white;
+          width: fit-content;
+        }
+        .form-control {
+          border: 1px solid $secondary;
+          border-radius: 0 !important;
+          font-size: 12px;
+          padding: 22px 15px;
+          &::placeholder {
+            font-size: 12px;
+          }
+          &:read-only {
+            cursor: pointer;
+            background-color: #fff !important;
+          }
+        }
+      }
+      // Align the users list in a column flex and place them
+      // at the beginning of the it
+      .users-options-wrapper {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $secondary;
+        border-top: 0 !important;
+        // Apply some margin between the users options
+        div {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          cursor: pointer;
+          margin: 10px 0;
+          padding: 10px;
+          width: 100%;
+          // Place a right margin between the image and the user's
+          // name
+          img {
+            margin-right: 10px;
+          }
+          // Change the option wrapper when it is hovered on
+          &:hover {
+            background-color: rgba($color: #c4c4c4, $alpha: 0.3);
+            color: grey;
+          }
+        }
+      }
+      button {
+        background-color: $secondary;
+        border-radius: 0 !important;
+        border: none !important;
+        margin: 30px 0 0 0;
+      }
+    }
+    .login-header {
+      color: $primary;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        color: rgba(146, 146, 157, 1);
+      }
+    }
+  }
+}

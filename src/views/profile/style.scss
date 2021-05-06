@@ -1,0 +1,202 @@
+$bg: #fff;
+$primary: #ff6701;
+$secondary: #fea82f;
+
+#main {
+  min-height: 100vh;
+  height: 100%;
+  // Remove all unnecessary styling from all buttons all over the admin panel \
+  button:focus {
+    border: none !important;
+    outline: none !important;
+    outline-offset: none !important;
+  }
+  .container-fluid {
+    .sidebar {
+      height: 100%;
+      min-height: 100vh;
+      background-color: $bg;
+      transition: max-width 0.5s ease-in-out;
+      // Style the logo on the sidebar
+      .logo {
+        width: 100%;
+        margin: 20px 30px 20px 30px;
+      }
+      .logo-xs {
+        display: none;
+      }
+      // Change the width of the sidebar when toggled
+      &.toggle {
+        max-width: 90px;
+        text-indent: -1000px;
+        // keep the sublinks' icons as they are and never change their width along with
+        // the toggle of the sidebar menu
+        .sublinks-wrapper {
+          img {
+            width: unset !important;
+            height: unset !important;
+            margin-left: 3px !important;
+          }
+        }
+      }
+      .routes-wrapper {
+        .nav {
+          width: 100% !important;
+          .nav-link {
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            position: relative;
+            margin: 0 20px;
+            padding: 13px !important;
+            border-radius: 7px;
+            text-decoration: none;
+            color: rgba(32, 34, 36, 1);
+            // align the icons and the text to the left of their containers
+            img {
+              align-self: flex-start;
+              width: 25px;
+              height: 25px;
+            }
+            span {
+              text-align: left;
+            }
+            // Change the background of the link to blue and also the font to white when it is active
+            &.active {
+              background-color: $primary !important;
+              color: white;
+              &::before {
+                content: "";
+                position: absolute;
+                left: -25px;
+                top: 0;
+                width: 10px;
+                height: 100%;
+                background-color: $primary;
+                border-top-right-radius: 7px;
+                border-bottom-right-radius: 7px;
+              }
+              // Change the color of the icon when the link is active
+              img {
+                filter: invert(1);
+              }
+            }
+          }
+          .sublinks-wrapper {
+            margin-top: 10px !important;
+            padding: 5px unset !important;
+            font-size: 13px;
+            .nav-link {
+              position: relative;
+              opacity: 0.5;
+              padding: 5px 13px !important;
+              img {
+                margin: auto auto auto 2px;
+                width: 20px;
+                height: 20px;
+              }
+              &.active {
+                background-color: $secondary !important;
+                color: white;
+                padding: 5px 13px !important;
+                opacity: 1;
+                &::before {
+                  content: "";
+                  background-color: $secondary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    // The styling of the page wrapper
+    .main-page {
+      background-color: floralwhite;
+      z-index: 3;
+      .main-navbar {
+        background-color: $bg;
+        height: 58px;
+        // Style the toggle menu icon
+        .open-menu-toggle-wrapper {
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: space-around;
+          height: 35%;
+          .open-menu-toggle {
+            position: relative;
+            width: 20px;
+            height: 2px;
+            background-color: rgba(64, 64, 64, 1);
+            border-radius: 50%;
+          }
+        }
+        // Style the admin dropdown menu
+        .main-profile-dropdown {
+          display: flex;
+          align-items: center;
+          img:first-of-type {
+            border-radius: 50%;
+            object-fit: contain;
+          }
+          .profile-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            margin: 0 0 0 20px;
+            h5 {
+              color: rgba(64, 64, 64, 1);
+              font-size: 13px;
+              font-weight: bold;
+              margin: 0;
+              padding: 0;
+            }
+            span {
+              color: rgb(151, 148, 148);
+              font-size: 11px;
+            }
+          }
+          .main-profile-dropdown-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: 1px solid #f5f6fa !important;
+            border-radius: 50%;
+            height: 25px;
+            width: 20px;
+            margin: 0 0 0 20px;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 770px) {
+    .main-sidebar {
+      min-height: fit-content !important;
+      &.toggle {
+        max-width: unset !important;
+        text-indent: unset !important;
+      }
+    }
+    // Change the width of the logo to occupy the full width of the screen
+    .logo {
+      display: none !important;
+      width: 100% !important;
+      height: unset !important;
+    }
+    // Display the main logo and hide the other one
+    .logo-xs {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      margin: 20px 30px 20px 30px;
+    }
+    // Hide the menu toggler
+    .open-menu-toggle-wrapper {
+      display: none !important;
+    }
+  }
+}

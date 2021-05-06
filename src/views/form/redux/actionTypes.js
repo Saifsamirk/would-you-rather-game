@@ -1,0 +1,2 @@
+export const ADD_NEW_QUESTION = "ADD_NEW_QUESTION";
+export const SET_FORM_VALUE = "SET_FORM_VALUE";

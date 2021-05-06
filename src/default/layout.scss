@@ -1,0 +1,57 @@
+#login,
+#profile,
+#questions-list,
+#leaderboard,
+#details,
+#form {
+  padding: 10px;
+  margin: 20px 10px;
+  // Style the title of the page
+  h1 {
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgba(32, 34, 36, 1);
+    margin: 0 0 40px 0;
+  }
+  // Style the span that shows up when there are no template available
+  .no-templates {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    // Place a padding on the item
+    padding: 40px;
+    // Change the font size to make it bigger and also the color
+    font-size: 24px;
+    color: #97a0c3;
+  }
+  // Use media queries to adjust elements in the UI
+  // when the screen size changes
+  @media screen and (max-width: 700px) {
+    .overlay-container {
+      // Stretch the search wrapper to occupy thw whole
+      // space of the row
+      .search-wrapper {
+        width: 100% !important;
+        // Apply margin between the rows to make
+        // the dropdown buttons clearer
+        margin: 0 0 20px 0 !important;
+        input {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+
+  // Use media queries to adjust elements in the UI
+  // when the screen size changes
+  @media screen and (max-width: 500px) {
+    .create-new-sms-btn {
+      // Stretch the create button to occupy thw whole
+      // space of the row
+      width: 100% !important;
+      margin: 0 0 20px 0 !important;
+    }
+  }
+}
